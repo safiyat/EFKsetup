@@ -1,11 +1,11 @@
 sudo tar xvf elasticsearch-1.7.2.tar.gz -C /opt/
 sudo chown -R safiyat /opt/elasticsearch-1.7.2
 unzip -o -d /opt/elasticsearch-1.7.2/plugins/ elasticsearch-head-master.zip
-if [ -d head ]
+if [ -d /opt/elasticsearch-1.7.2/plugins/head ]
 then
-    rm -rf head
+    sudo rm -rf /opt/elasticsearch-1.7.2/plugins/head
 fi
-mv -f /opt/elasticsearch-1.7.2/plugins/elasticsearch-head-master /opt/elasticsearch-1.7.2/plugins/head
+sudo mv -f /opt/elasticsearch-1.7.2/plugins/elasticsearch-head-master /opt/elasticsearch-1.7.2/plugins/head
 
 sudo tar xvf kibana-4.1.2-linux-x64.tar.gz -C /opt/
 sudo chown -R safiyat /opt/kibana-4.1.2-linux-x64
