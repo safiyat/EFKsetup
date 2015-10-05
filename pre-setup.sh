@@ -1,5 +1,3 @@
-sudo apt-get install ruby2.0
-sudo apt-get install bundler
-sudo apt-get install ntp
-
-
+sudo apt-get -y install ruby2.0
+sudo apt-get -y install bundler
+sudo apt-get -y install ntp
