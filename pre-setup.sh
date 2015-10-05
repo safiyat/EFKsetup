@@ -33,7 +33,11 @@ then
     sudo apt-get -y install bundler
 fi
 
-sudo gem install rdoc
+RDOC_INSTALLED=$(gem2.0 list --local | grep "^rdoc ")
+if [ -z  "$BUNDLER_INSTALLED" ]
+then
+    sudo gem2.0 install rdoc
+fi
 
 NTP_INSTALLED=$(dpkg -l | grep " ntp ")
 if [ -z  "$NTP_INSTALLED" ]
@@ -46,3 +50,13 @@ then
     sudo apt-get -y install ntp
 fi
 
+JAVA_INSTALLED=$(which java)
+if [ -z  "$JAVA_INSTALLED" ]
+then
+    if [ -z "$APT_UPDATED" ]
+    then
+        sudo apt-get update
+        APT_UPDATED="True"
+    fi
+    sudo apt-get -y install openjdk-7-jre
+fi
