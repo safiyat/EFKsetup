@@ -19,7 +19,7 @@ then
         sudo apt-get update
         APT_UPDATED="True"
     fi
-    sudo apt-get -y install ruby2.0
+    sudo apt-get -y install ruby2.0 ruby2.0-dev
 fi
 
 BUNDLER_INSTALLED=$(dpkg -l | grep " bundler ")
