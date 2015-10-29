@@ -7,6 +7,8 @@ curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent2.sh 
 sudo /etc/init.d/td-agent restart
 sudo /etc/init.d/td-agent status
 
+sudo td-agent-gem uninstall json
+
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
 
 #sdo gem install fluentd --no-ri --no-rdoc

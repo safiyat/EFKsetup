@@ -7,6 +7,7 @@ curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent2.sh 
 sudo /etc/init.d/td-agent restart
 sudo /etc/init.d/td-agent status
 
+sudo td-agent-gem uninstall json
 sudo td-agent-gem install fluent-plugin-elasticsearch
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
 
