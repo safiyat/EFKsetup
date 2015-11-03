@@ -9,6 +9,7 @@ sudo /etc/init.d/td-agent status
 
 sudo td-agent-gem uninstall json
 sudo td-agent-gem install fluent-plugin-elasticsearch
+sudo td-agent-gem install fluent-plugin-forest
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
 
 #sdo gem install fluentd --no-ri --no-rdoc
