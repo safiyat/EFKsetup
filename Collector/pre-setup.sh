@@ -23,3 +23,9 @@ then
     fi
     sudo apt-get -y install ntp
 fi
+
+echo -e "root soft nofile 65536 \n\
+    root hard nofile 65536\n\
+    * soft nofile 65536 \n\
+    * hard nofile 65536" | sudo tee -a /etc/security/limits.conf\
+    > /dev/null
