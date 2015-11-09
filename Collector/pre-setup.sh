@@ -24,6 +24,7 @@ then
     sudo apt-get -y install ntp
 fi
 
+# Increase the maximum number of file descriptors
 echo -e "root soft nofile 65536 \n\
     root hard nofile 65536\n\
     * soft nofile 65536 \n\
