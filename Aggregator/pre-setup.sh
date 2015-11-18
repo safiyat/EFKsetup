@@ -16,6 +16,18 @@ then
     sudo apt-get -y install curl
 fi
 
+# Install unzip to unzip head plugin
+UNZIP_INSTALLED=$(dpkg -l | grep " unzip ")
+if [ -z  "$UNZIP_INSTALLED" ]
+then
+    if [ -z $APT_UPDATED ]
+    then
+        sudo apt-get update
+        APT_UPDATED="True"
+    fi
+    sudo apt-get -y install unzip
+fi
+
 # Install ntp for fluentd
 NTP_INSTALLED=$(dpkg -l | grep " ntp ")
 if [ -z  "$NTP_INSTALLED" ]
