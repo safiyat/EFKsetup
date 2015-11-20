@@ -16,7 +16,6 @@ echo "GEMPATH:-$GEM_PATH-"
 
 if [ -f "$GEM_PATH/fluent-plugin-retag-0.0.1.gem" ]
 then
-    echo "sudo td-agent-gem install fluent-plugin-retag --local --bindir $GEM_PATH"
     sudo td-agent-gem install fluent-plugin-retag --local --bindir $GEM_PATH
 else
     echo "Gem fluent-plugin-retag not found. Not installing."
