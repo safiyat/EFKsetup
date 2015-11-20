@@ -3,10 +3,10 @@
 # Download and install fluentd (td-agent) and all its requirements
 # curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent2.sh | sh
 
-curl https://packages.treasuredata.com/GPG-KEY-td-agent | apt-key add -
-echo "deb [arch=amd64] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib" > /etc/apt/sources.list.d/treasure-data.list
-apt-get update
-apt-get install -y --force-yes td-agent
+curl https://packages.treasuredata.com/GPG-KEY-td-agent | sudo apt-key add -
+echo "deb [arch=amd64] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib" | sudo tee /etc/apt/sources.list.d/treasure-data.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y --force-yes td-agent
 
 # Status check
 sudo /etc/init.d/td-agent restart
