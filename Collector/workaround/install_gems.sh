@@ -14,7 +14,7 @@ fi
 
 echo "GEMPATH:-$GEM_PATH-"
 
-if [ -f "$GEM_PATH/fluent-plugin-retag-0.0.1.gem" ]
+if [ -s "${GEM_PATH%%/}/fluent-plugin-retag-0.0.1.gem" ]
 then
     sudo td-agent-gem install fluent-plugin-retag --local --bindir $GEM_PATH
 else
@@ -22,7 +22,7 @@ else
 fi
 
 
-if [ -f "$GEM_PATH/fluent-plugin-grok-parser-0.0.2.gem" ]
+if [ -f "${GEM_PATH%%/}/fluent-plugin-grok-parser-0.0.2.gem" ]
 then
     sudo td-agent-gem install fluent-plugin-grok-parser --local --bindir $GEM_PATH
 else
