@@ -16,7 +16,7 @@ sudo /etc/init.d/td-agent status
 sudo td-agent-gem uninstall json
 
 # Install grok parser for parsing local logs
-sudo td-agent-gem install fluent-plugin-grok-parser
+# sudo td-agent-gem install fluent-plugin-grok-parser   Delegated to workaround script
 
 # Install retag plugin to support proper tagging of data
-sudo td-agent-gem install fluent-plugin-retag
+# sudo td-agent-gem install fluent-plugin-retag         Delegated to workaround script

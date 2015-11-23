@@ -9,7 +9,7 @@ if [ -n "$1" ]
 then
     GEM_PATH="$1"
 else
-    GEM_PATH="~/gems"
+    GEM_PATH=`pwd`
 fi
 
 echo "GEMPATH:-$GEM_PATH-"
