@@ -9,8 +9,11 @@ sudo apt-get update
 sudo apt-get install -y --force-yes td-agent
 
 # Status check
-sudo /etc/init.d/td-agent restart
-sudo /etc/init.d/td-agent status
+# sudo /etc/init.d/td-agent restart
+# sudo /etc/init.d/td-agent status
+
+# Stop service for configuration
+sudo /etc/init.d/td-agent stop
 
 # Fix dependency errors
 sudo td-agent-gem uninstall json
