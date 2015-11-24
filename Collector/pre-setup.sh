@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+# APT is updated by the previously run commands.
 APT_UPDATED="True"
 
 CURL_INSTALLED=$(dpkg -l | grep " curl ")
