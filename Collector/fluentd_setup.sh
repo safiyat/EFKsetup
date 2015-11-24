@@ -16,7 +16,10 @@ sudo apt-get install -y --force-yes td-agent
 sudo /etc/init.d/td-agent stop
 
 # Fix dependency errors
-sudo td-agent-gem uninstall json
+if [ -n "`sudo td-agent-gem list | grep 1.8.2`" ]
+then
+    sudo td-agent-gem uninstall json
+fi
 
 # Install grok parser for parsing local logs
 # sudo td-agent-gem install fluent-plugin-grok-parser   Delegated to workaround script
