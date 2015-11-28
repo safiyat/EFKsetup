@@ -1,30 +1,26 @@
 #! /usr/bin/env bash
 
-#
-# Only run this file if you are holding the gems locally and not installing gems from the remote server.
-#
-#
+################################################################################
+#                                                                              #
+#                        Install gems from local gem files.                    #
+#                                                                              #
+#      script: install_gems.sh                                                 #
+#      author: Md Safiyat Reza (md.reza@snapdeal.com)                          #
+#                                                                              #
+#      A script to install ruby gems from local gem files, till the local gem  #
+#  server has not been set up.                                                 #
+#      Designed to be run using ansible or some other wrapper. Please cd into  #
+#  the directory containing the gems before running the script.                #
+#                                                                              #
+################################################################################
 
-if [ -n "$1" ]
-then
-    GEM_PATH="$1"
-else
-    GEM_PATH=`pwd`
-fi
+sudo td-agent-gem install --force --local fluent-plugin-forest-0.3.0.gem
 
-echo "GEMPATH:-$GEM_PATH-"
+sudo td-agent-gem install --force --local excon-0.45.4.gem
+sudo td-agent-gem install --force --local elasticsearch-api-1.0.14.gem
+sudo td-agent-gem install --force --local multipart-post-2.0.0.gem
+sudo td-agent-gem install --force --local faraday-0.9.2.gem
+sudo td-agent-gem install --force --local elasticsearch-transport-1.0.14.gem
+sudo td-agent-gem install --force --local elasticsearch-1.0.14.gem
+sudo td-agent-gem install --force --local fluent-plugin-elasticsearch-1.1.0.gem
 
-if [ -s "${GEM_PATH%%/}/fluent-plugin-elasticsearch-1.1.0.gem" ]
-then
-    sudo td-agent-gem install fluent-plugin-elasticsearch --local --bindir $GEM_PATH
-else
-    echo "Gem fluent-plugin-elasticsearch not found. Not installing."
-fi
-
-
-if [ -f "${GEM_PATH%%/}/fluent-plugin-forest-0.3.0.gem" ]
-then
-    sudo td-agent-gem install fluent-plugin-forest --local --bindir $GEM_PATH
-else
-    echo "Gem fluent-plugin-forest not found. Not installing."
-fi
