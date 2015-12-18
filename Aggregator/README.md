@@ -163,3 +163,5 @@ The configuration files to be modified/created are:
     This file contains the configuration for kibana running on the aggregator node.
     <br>
     Copy it to the location `/opt/kibana-4.1.2-linux-x64/config/`.
+
+In addition to the above mentioned configurations, we also need to set the mappings of fields of type `string` in elasticsearch to [`not_analyzed`](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-intro.html#custom-field-mappings), using a curl request.
