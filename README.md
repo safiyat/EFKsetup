@@ -9,3 +9,6 @@ Node to receive and index parsed and sturctured logs in elasticsearch from the f
 ### To do
 - Fix the analyzed string issue in kibana. Especially for the host names. 
 - Read and implement [this](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.html).
+
+### References
+- Awesome [module](https://www.npmjs.com/package/elasticdump) to transfer data between clusters!
