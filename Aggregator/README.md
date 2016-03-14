@@ -6,12 +6,12 @@ This document provides the overview and installation/creation of an aggregator n
 1. [Overview](#overview)
     1. [Collector](#collector)
     1. [Aggregator](#aggregator)
-    
+
 2. [Aggregator](#aggregator-1)
     1. [Fluentd](#fluentd)
     2. [Elasticsearch](#elasticsearch)
     3. [Kibana](#kibana)
-    
+
 3. [Setting it up](#setting-it-up)
     1. [Install and configure aggregator](#install-and-configure-aggregator)
        1. [Pre-installation](#pre-installation)
@@ -149,13 +149,13 @@ The configuration files to be modified/created are:
     1. `elasticsearch.yml`
 
         This file contains the configuration for the elasticsearch daemon running on the aggregator.
-	It sets the cluster name to **sdcloud**. It also sets the path to store elasticsearch logs and sets the IPs to be unicasted for discovery.
-	<br>
+        It sets the cluster name to **sdcloud**. It also sets the path to store elasticsearch logs and sets the IPs to be unicasted for discovery.
+        <br>
         Copy it to the location `/opt/elasticsearch-1.7.2/config/`.
 
     2. `logging.yml`
         This file contains the logging configuration for the elasticsearch daemon running on the aggregator.
-	<br>
+        <br>
         Copy it to the location `/opt/elasticsearch-1.7.2/config/`.
 
 4. `kibana.yml`
@@ -164,4 +164,4 @@ The configuration files to be modified/created are:
     <br>
     Copy it to the location `/opt/kibana-4.1.2-linux-x64/config/`.
 
-In addition to the above mentioned configurations, we also need to set the mappings of fields of type `string` in elasticsearch to [`not_analyzed`](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-intro.html#custom-field-mappings), using a curl request.
+In addition to the above mentioned configurations, we also need to set the mappings of fields of type `string` in elasticsearch to [`not_analyzed`](https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping-intro.html#custom-field-mappings), using a curl request (or utilising [this script](https://github.com/safiyat/EFKsetup/blob/02b73879d7a7b6698e1fdb15766246f232402862/Aggregator/set_not_analyzed.sh).)
